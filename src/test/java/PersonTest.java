@@ -1,6 +1,13 @@
-## Результат вывода программы в консоль
-Добавлены unit-тесты для класса Person:
-``` java
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.security.InvalidParameterException;
+
+
+class PersonTest {
+
+   Person testClass = new Person("test name", "test surname", 5);
+
    @Test
    public void test_haveFun(){
       final int startCount = testClass.getCountOfTickets();
@@ -25,12 +32,3 @@
       Assertions.assertEquals(surname,testClass.getSurname());
    }
 }
-```
-И метода класса Main:
-``` java
-    @Test
-    void test_generateClients() {
-        LinkedList<Person> endList = Main.generateClients();
-        Assertions.assertEquals(LinkedList.class, endList.getClass());
-    }
-```
